@@ -34,6 +34,7 @@ pipeline {
     stage('Test') {
       steps{
         echo "Testing relase $RELEASE..." 
+        writeFile file: 'test-results.txt', text: 'passed'
       }
     }
     

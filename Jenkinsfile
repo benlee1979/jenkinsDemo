@@ -57,5 +57,8 @@ pipeline {
     always {
       echo 'Prints whether deploy happened or not, succuss or failure' 
     }
+    success {
+      archiveArtifacts 'test-results.txt' 
+    }
   }
 }

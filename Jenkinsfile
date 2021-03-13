@@ -9,9 +9,27 @@ pipeline {
       environment{
         LOG_LEVEL='INFO'
       }
-      steps {
-        echo "Building relase $RELEASE with log level $LOG_LEVEL..."
+      
+      parallel{
+        stage('linux') {
+          steps {
+            echo "Building relase $RELEASE with log level $LOG_LEVEL..."
+          }
+        }
+        
+       stage('WINDOW') {
+          steps {
+            echo "Building relase $RELEASE with log level $LOG_LEVEL..."
+          }
+        }
+        
+       stage('DOS') {
+          steps {
+            echo "Building relase $RELEASE with log level $LOG_LEVEL..."
+          }
+        }
       }
+    
     }
     
     stage('Test') {

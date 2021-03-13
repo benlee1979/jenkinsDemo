@@ -10,13 +10,13 @@ pipeline {
         LOG_LEVEL='INFO'
       }
       steps {
-        echo "Building relase ${RELEASE} with log level $ {LOG_LEVEL}..."
+        echo "Building relase $RELEASE with log level $LOG_LEVEL..."
       }
     }
     
     stage('Test') {
       steps{
-        echo "Testing relase ${RELEASE}..." 
+        echo "Testing relase $RELEASE..." 
       }
     }
     
@@ -30,7 +30,7 @@ pipeline {
         }
         
         steps {
-          echo "Deploying relase ${RELEASE} to environment ${TARGET_ENVIRONMENT}" 
+          echo "Deploying relase $RELEASE to environment $TARGET_ENVIRONMENT" 
         }
     }
   }
